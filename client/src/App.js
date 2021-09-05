@@ -7,12 +7,15 @@ import Resume from "./views/resume/Resume";
 import { useProvideContact } from "./hooks";
 import "./App.scss";
 import SocialLinks from "./components/socialLinks/SocialLinks";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 function App() {
   const { state } = useProvideContact();
   console.log(state.contactFormVisible);
   return (
     <div className="mainAppContainer">
+      <ToastContainer />
       <Header />
       {state.contactFormVisible ? <ContactForm /> : ""}
       <SocialLinks />
