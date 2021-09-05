@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const nodemailer = require("nodemailer");
-const xoauth2 = require("xoauth2");
+require("dotenv").config();
 
 router.post("/sendMessage", async (req, res) => {
   let { email, firstName, lastName, phone, websiteType, message } = req.body;
@@ -11,12 +11,12 @@ router.post("/sendMessage", async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      xoauth2: xoauth2.createXOAuth2Generator({
-        user: "thewardbunch@gmail.com",
-        clientId: process.env.GMAIL_CLIENT_ID,
-        clientSecret: process.env.GMAIL_CLIENT_SECRET,
-        refreshToken: "",
-      }),
+      type: "OAuth2",
+      user: "thewardbunch@gmail.com",
+      clientId: process.env.GMAIL_CLIENT_ID,
+      clientSecret: process.env.GMAIL_CLIENT_SECRET,
+      refreshToken: process.env.GMAIL_REFRESH_TOKEN,
+      accessToken: process.env.GMAIL_ACCESS_TOKEN,
     },
   });
   const mailOptions = {
@@ -25,6 +25,7 @@ router.post("/sendMessage", async (req, res) => {
     subject: `Message from ${req.body.email}: ${req.body.websiteType}`,
     text: req.body.message,
   };
+  console.log(mailOptions, process.env.GMAIL_REFRESH_TOKEN);
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
