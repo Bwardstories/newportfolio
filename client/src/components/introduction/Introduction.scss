@@ -1,0 +1,33 @@
+.introContainer {
+  width: 100%;
+  padding-top: 27%;
+}
+
+.textContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.imageContainer {
+  width: 20%;
+}
+
+.introPreName {
+  color: var(--color4);
+}
+
+.myName {
+  color: var(--color4);
+  font-size: clamp(4rem, 4vw, 8rem);
+}
+
+.briefIntro {
+  color: var(--color4alt);
+  font-size: clamp(2rem, 4vw, 8rem);
+}
+
+.introText {
+  color: white;
+}

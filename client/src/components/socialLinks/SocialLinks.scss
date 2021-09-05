@@ -1,0 +1,27 @@
+.socialNavContainer {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  align-items: center;
+  position: fixed;
+  top: 70%;
+  left: 5%;
+  width: 20px;
+}
+
+.socialNavContainer a {
+  padding: 80%;
+}
+
+.githubIcon:hover {
+  opacity: 0.2;
+}
+
+.socialNavContainer:after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 150px;
+  margin: 0px auto;
+  background-color: var(--color4);
+}

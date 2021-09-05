@@ -1,0 +1,71 @@
+.projectContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20%;
+}
+
+.projectImage {
+  width: 600px;
+}
+
+.projectSectionHeader {
+  text-align: center;
+}
+
+.projectImageContainer {
+  width: 600px;
+  height: 340px;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: darken;
+  transition: all 0.5s ease-in-out;
+  z-index: 3;
+}
+
+.projectImageContainer:hover {
+  background-blend-mode: normal;
+  transition: all 0.5s ease-in-out;
+}
+
+.projectInfoContainer {
+  width: 50%;
+}
+
+.projectTitle {
+  color: var(--color4);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.infoContainer {
+  top: 30%;
+  width: 100%;
+}
+
+.descriptionContainer {
+  border-radius: 2%;
+  color: white;
+  padding: 5%;
+  width: 100%;
+}
+
+.evenSkillList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(80px, 160px));
+  overflow: hidden;
+  list-style: none;
+  color: var(--color4);
+}
+
+.skillList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(80px, 160px));
+  overflow: hidden;
+  list-style: none;
+  color: var(--color4);
+  margin-right: 5%;
+}
+
+.skillList li,
+.evenSkillList li {
+  padding: 4%;
+}

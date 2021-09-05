@@ -1,0 +1,93 @@
+#root {
+  padding: 0;
+  margin: 0;
+  background-color: var(--color5);
+  height: 100vh;
+  width: 100%;
+  /* overflow-x: hidden; */
+}
+
+.mainAppContainer {
+  height: 320%;
+  background-image: url("./assets/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: static;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  z-index: 3;
+}
+
+:root {
+  --color1: #0b0c10;
+  --color2: #1f2833;
+  --color3: #c5c6c7;
+  --color4: rgb(100, 252, 242);
+  --color5: #1e2c25;
+  --color4alt: rgba(100, 252, 242, 0.5);
+}
+
+@media (max-width: 1750px) {
+  .projectImageContainer {
+    width: 400px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .projectContainer {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .profilePic,
+  .imageContainer {
+    display: none;
+  }
+  .descriptionContainer {
+    padding: 0;
+  }
+  .aboutMeContainer {
+    width: 200%;
+  }
+  .textContainer {
+    width: 50%;
+  }
+  .aboutMe {
+    text-align: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .mainContainer {
+    width: 80%;
+  }
+}
+
+@media (max-width: 800px) {
+}
+
+@media (max-width: 680px) {
+  .socialNavContainer a {
+    display: none;
+  }
+  .descriptionContainer {
+    width: 100%;
+  }
+  .mainContainer {
+    width: 94%;
+  }
+  .socialNavContainer:after {
+    display: none;
+  }
+  .skillList,
+  .evenSkillList {
+    margin-right: 0%;
+    padding: 0;
+  }
+  .projectInfoContainer {
+    width: 80%;
+  }
+  .headerNavbar {
+    position: inherit !important;
+  }
+}

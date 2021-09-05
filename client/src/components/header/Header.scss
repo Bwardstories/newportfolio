@@ -1,0 +1,69 @@
+.headerNavbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  padding-top: 1%;
+}
+
+.navbar-nav {
+  font-size: 1.5rem;
+}
+
+.navbar-brand {
+  color: var(--color4);
+  width: 40%;
+}
+
+.logoIcon {
+  width: 10%;
+  margin-top: -7px;
+}
+
+.logoName {
+  color: var(--color4);
+  font-size: 1.5rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--color4);
+}
+
+.headerLinks {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding-right: 2%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.resumeLink {
+  text-decoration: none;
+}
+
+button {
+  background: transparent;
+  border: none;
+  color: var(--color4);
+}
+
+button:hover {
+  color: rgb(170, 169, 169);
+}
+
+button:focus {
+  color: rgb(250, 250, 250);
+}
+
+@media (max-width: 1440px) {
+  .logoName {
+    font-size: 1.2rem;
+  }
+  .navbar-nav {
+    font-size: 1.2rem;
+  }
+  .headerLinks {
+    padding-right: 0;
+  }
+}

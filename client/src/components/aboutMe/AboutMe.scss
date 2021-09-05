@@ -1,0 +1,44 @@
+.aboutMeContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20%;
+  margin-top: 15%;
+  margin-bottom: 12%;
+  width: 100%;
+  z-index: 2;
+}
+
+.profilePic {
+  width: 150%;
+  border-radius: 50%;
+}
+
+.textContainer h1 {
+  color: var(--color4);
+  font-size: clamp(2rem, 4vw, 8rem);
+}
+
+.aboutMeMainText {
+  color: white;
+}
+
+.skillsList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  overflow: hidden;
+  list-style: none;
+  color: var(--color4);
+}
+
+.skillsList li {
+  position: relative;
+}
+
+ul.skillsList li::before {
+  content: "▹";
+  position: absolute;
+  left: -18px;
+  color: var(--color4);
+  font-size: 1rem;
+  line-height: 25px;
+}
