@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import App from "./src/App";
 import { BrowserRouter } from "react-router-dom";
-import { ContactProvider as ProvideContact } from "./hooks/useContact";
+import { ContactProvider as ProvideContact } from "./src/hooks/useContact";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./components/header/Header.scss";
 
