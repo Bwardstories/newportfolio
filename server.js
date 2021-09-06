@@ -1,8 +1,42 @@
-const router = require("express").Router();
+import express from "express";
+import morgan from "morgan";
+import cors from "cors";
+import router from "express";
 const nodemailer = require("nodemailer");
-require("dotenv").config();
+import dotenv from "dotenv";
+import path from "path";
+// initialize server
+const app = express();
 
-router.post("/sendMessage", async (req, res) => {
+// declare server
+const SERVER_PORT = process.env.PORT || 5000;
+
+// middleware
+app.use(express.json());
+app.use(cors());
+app.use(morgan(":method :url :response-time"));
+
+// establish message route
+app.use("/api", router);
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    const _dirname = path.dirname(new URL(import.meta.url).pathname);
+    res.sendFile(path.resolve(_dirname, "client", "build", "index.html"));
+  });
+} else {
+  app.get("/api", (req, res) => {
+    res.send("Hello");
+  });
+}
+
+// show server is listening
+app.listen(SERVER_PORT, () => {
+  console.log(`the server has started on port : ${SERVER_PORT}`);
+});
+
+app.post("/sendMessage", async (req, res) => {
   let { email, firstName, lastName, phone, websiteType, message } = req.body;
   if (!email || !firstName || !lastName || !phone || !websiteType || !message) {
     return res.status(400).json({ msg: "Not all fields have been entered" });
@@ -36,5 +70,3 @@ router.post("/sendMessage", async (req, res) => {
     }
   });
 });
-
-module.exports = router;
