@@ -2,7 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import router from "express";
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import path from "path";
 // initialize server
